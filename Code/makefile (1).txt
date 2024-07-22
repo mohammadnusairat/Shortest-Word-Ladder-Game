@@ -1,0 +1,18 @@
+build:
+	rm -f a.out
+	gcc main.c
+
+run:
+	./a.out
+
+run_test:
+	./a.out < test.txt
+
+valgrind:
+	valgrind -s --tool=memcheck --leak-check=yes --track-origins=yes ./a.out
+
+valgrind_test:
+	valgrind -s --tool=memcheck --leak-check=yes --track-origins=yes ./a.out < test.txt
+
+clean:
+	rm -f a.out
